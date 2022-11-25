@@ -1,6 +1,6 @@
 import 'package:counter_7/drawer.dart';
 import 'package:flutter/material.dart';
-import 'models/budget.dart';
+import 'budget.dart';
 
 class MyDataPage extends StatefulWidget {
   const MyDataPage({super.key});
@@ -17,7 +17,7 @@ class _MyDataPageState extends State<MyDataPage> {
         centerTitle: false,
         title: const Text('Data Budget'),
       ),
-      drawer: const MyDrawerPage(),
+      drawer: const MyDrawer(),
       body: SingleChildScrollView(
         child: Budget.listBudget.isEmpty
             ? Column(

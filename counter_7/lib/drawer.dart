@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/data.dart';
-import 'package:counter_7/form.dart';
+import 'package:counter_7/page/data.dart';
+import 'package:counter_7/page/form.dart';
+import 'package:counter_7/mywatchlist/mywatchlist.dart';
 
-class DrawerApp extends StatelessWidget {
-  const DrawerApp({super.key})
 
+class MyDrawer extends StatefulWidget {
+  const MyDrawer({super.key});
+
+  @override
+  State<MyDrawer> createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -36,6 +43,16 @@ class DrawerApp extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => const MyHomePage()),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('My Watch List'),
+            onTap: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const MyWatchListPage()),
               );
             },
           ),
